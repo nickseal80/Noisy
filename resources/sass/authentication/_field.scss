@@ -1,0 +1,32 @@
+.form-field {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+
+    input {
+
+        &[type='text'], &[type='password'] {
+            height: 32px;
+            border: 1px solid #e0dede;
+            border-radius: 3px;
+            margin-bottom: 20px;
+        }
+
+        &[type='submit'] {
+            margin: 20px 0 20px;
+            height: 32px;
+            background-color: #32a842;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 1px 1px 4px 0 #7b7b7b;
+        }
+    }
+
+    label {
+        font-size: 14px;
+        font-weight: 700;
+    }
+}
