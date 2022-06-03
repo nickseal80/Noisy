@@ -25,7 +25,7 @@
     @endif
 
     {{-- for registration --}}
-    @if ($action === 'register')
+    @if ($action === 'sign-up')
 
         {{-- confirm password --}}
         <x-auth-field

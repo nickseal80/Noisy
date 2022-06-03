@@ -29,12 +29,12 @@
   display: flex;
   flex-direction: column;
   width: 400px;
+  margin-bottom: 20px;
 }
 .auth-container .auth-form .form-field input[type=text], .auth-container .auth-form .form-field input[type=password] {
   height: 32px;
   border: 1px solid #e0dede;
   border-radius: 3px;
-  margin-bottom: 20px;
 }
 .auth-container .auth-form .form-field input[type=submit] {
   margin: 20px 0 20px;
@@ -50,6 +50,10 @@
 .auth-container .auth-form .form-field label {
   font-size: 14px;
   font-weight: 700;
+}
+.auth-container .auth-form .form-field .form-field-errors {
+  font-size: 13px;
+  color: #f10b0b;
 }
 .auth-container .auth-form .forget-passwd-link {
   text-decoration: none;

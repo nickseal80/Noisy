@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{locale?}', function () {
-    return view('welcome');
+Route::get('/{action?}/{locale?}', function ($action = 'login') {
+    return view('welcome', ['action' => $action]);
 })->name('index');
 
 Route::get('lang/{locale}', function ($locale) {

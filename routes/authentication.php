@@ -14,5 +14,5 @@ Route::controller(AuthenticationController::class)->prefix('auth')->group(functi
         ->name('auth.post.login');
 
     Route::post('sign-up', 'register')
-        ->name('auth.post.register');
+        ->name('auth.post.sign-up');
 });

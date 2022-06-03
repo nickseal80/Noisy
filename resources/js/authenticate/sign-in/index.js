@@ -2,6 +2,12 @@ import validator from '../validation';
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
+
+        /**
+         * @property {Object} data
+         * @property {string} data.loginRequiredMessage
+         * @property {string} data.passwordRequiredMessage
+         */
         const { data } = await window.axios.get(route('auth.get.sign-in_data'));
 
         const emailFormField = document.querySelector('.form-field.email-field');
