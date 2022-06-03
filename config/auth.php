@@ -108,4 +108,9 @@ return [
 
     'password_timeout' => 10800,
 
+    'minPasswordLength' => 7,
+    'maxPasswordLength' => 32,
+    'minNickNameLength' => 2,
+    'maxNickNameLength' => 24,
+
 ];

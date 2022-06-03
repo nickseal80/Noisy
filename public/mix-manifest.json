@@ -1,7 +1,7 @@
 {
-    "/js/app.js": "/js/app.js",
+    "/js/bootstrap.js": "/js/bootstrap.js",
+    "/js/authentication/sign-in/index.js": "/js/authentication/sign-in/index.js",
     "/css/fonts.css": "/css/fonts.css",
-    "/css/app.css": "/css/app.css",
     "/css/authentication/index.css": "/css/authentication/index.css",
     "/css/base.css": "/css/base.css",
     "/fonts/LICENSE.txt": "/fonts/LICENSE.txt",

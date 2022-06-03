@@ -13,8 +13,12 @@
     <link href="{{ mix('/css/base.css') }}" rel="stylesheet"/>
     <link href="{{ mix('/css/fonts.css') }}" rel="stylesheet"/>
     @yield('styles')
+
+    @routes
 </head>
 <body>
     @yield('content')
+    @yield('scripts')
+    <script src="{{ mix('/js/bootstrap.js') }}"></script>
 </body>
 </html>

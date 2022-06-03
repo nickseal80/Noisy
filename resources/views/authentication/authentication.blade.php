@@ -15,3 +15,7 @@
         </div>
     </div>
 </div>
+
+@section('scripts')
+    <script src="{{ mix('/js/authentication/sign-in/index.js') }}"></script>
+@endsection

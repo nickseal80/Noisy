@@ -11,10 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.js('resources/js/bootstrap.js', 'public/js/bootstrap.js');
+mix.js('resources/js/authenticate/sign-in/index.js', 'public/js/authentication/sign-in');
 
 mix.copyDirectory('resources/fonts', 'public/fonts');
 
