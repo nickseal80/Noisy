@@ -11,12 +11,10 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/bootstrap.js', 'public/js/bootstrap.js');
-mix.js('resources/js/authenticate/sign-in/index.js', 'public/js/authentication/sign-in');
+mix.js('resources/js/index.js', 'public/js');
 
 mix.copyDirectory('resources/fonts', 'public/fonts');
 
 mix.css('resources/css/fonts.css', 'public/css');
 
 mix.sass('resources/sass/base.scss', 'public/css');
-mix.sass('resources/sass/authentication/index.scss', 'public/css/authentication');

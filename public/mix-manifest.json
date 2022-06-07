@@ -1,8 +1,6 @@
 {
-    "/js/bootstrap.js": "/js/bootstrap.js",
-    "/js/authentication/sign-in/index.js": "/js/authentication/sign-in/index.js",
+    "/js/index.js": "/js/index.js",
     "/css/fonts.css": "/css/fonts.css",
-    "/css/authentication/index.css": "/css/authentication/index.css",
     "/css/base.css": "/css/base.css",
     "/fonts/LICENSE.txt": "/fonts/LICENSE.txt",
     "/fonts/Roboto-Black.ttf": "/fonts/Roboto-Black.ttf",

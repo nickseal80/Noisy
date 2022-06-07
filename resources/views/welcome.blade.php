@@ -1,12 +1,9 @@
 @extends('components.base-layout')
 
 @section('content')
-    @guest
-        @section('styles')
-            <link rel="stylesheet" href="{{ mix('/css/authentication/index.css') }}">
-        @endsection
+    <div id="root"></div>
 
-        {{-- show login/register form --}}
-        @include('authentication.authentication')
-    @endguest
+    @section('scripts')
+        <script src="{{ mix('/js/index.js') }}"></script>
+    @endsection
 @endsection

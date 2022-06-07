@@ -19,6 +19,5 @@
 <body>
     @yield('content')
     @yield('scripts')
-    <script src="{{ mix('/js/bootstrap.js') }}"></script>
 </body>
 </html>
