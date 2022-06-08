@@ -5,19 +5,19 @@
     </a>
 
     <div class="auth-form">
-        <h3>{{ __('authentication/messages.headerSignIn') }}</h3>
+        <h3>{{ __('auth/messages.headerSignIn') }}</h3>
 
         <x-auth-form action="{{ $action ?: 'login' }}"/>
 
         <div class="invite-reg">
-            {{ __('authentication/messages.notHaveAcc') }}
-            <a href="{{ route('index', ['action' => 'sign-up']) }}">{{ __('authentication/messages.signUp') }}</a>
+            {{ __('auth/messages.notHaveAcc') }}
+            <a href="{{ route('index', ['action' => 'sign-up']) }}">{{ __('auth/messages.signUp') }}</a>
         </div>
     </div>
 </div>
 
 @section('scripts')
     @if (!$action)
-        <script src="{{ mix('/js/authentication/sign-in/index.js') }}"></script>
+        <script src="{{ mix('/js/auth/sign-in/index.js') }}"></script>
     @endif
 @endsection

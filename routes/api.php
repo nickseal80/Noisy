@@ -15,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
+|--------------------------------------------------------------------------
+| AUTHENTICATION
+|--------------------------------------------------------------------------
+*/
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -22,4 +28,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(UserController::class)->group(function () {
     Route::get('user-data', 'getUserData')
         ->name('api.get.user-data');
+});
+
+Route::controller(\App\Http\Controllers\Auth\DataController::class)->group(function () {
+    Route::get('login-data', 'getLoginData')
+        ->name('api.get.login-data');
 });

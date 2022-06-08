@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'signIn' => [
+    'login' => [
         'emailRequireMessage' => 'Введите Email',
         'passwordRequireMessage' => 'Введите пароль',
     ],

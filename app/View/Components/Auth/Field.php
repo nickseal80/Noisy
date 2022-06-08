@@ -22,6 +22,6 @@ class Field extends Component
 
     public function render(): View
     {
-        return view('authentication.components.field');
+        return view('auth.components.field');
     }
 }

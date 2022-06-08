@@ -12,7 +12,7 @@
     {{-- password field --}}
     <x-auth-field
         type="password"
-        label="{{ __('authentication/labels.password') }}"
+        label="{{ __('auth/labels.password') }}"
         name="password"
     />
 
@@ -20,7 +20,7 @@
     @if ($action === 'login')
 
         {{-- forget password --}}
-        <a href="#" class="forget-passwd-link">{{ __('authentication/labels.forgetPassword') }}</a>
+        <a href="#" class="forget-passwd-link">{{ __('auth/labels.forgetPassword') }}</a>
 
     @endif
 
@@ -30,14 +30,14 @@
         {{-- confirm password --}}
         <x-auth-field
             type="password"
-            label="{{ __('authentication/labels.confirmPassword') }}"
+            label="{{ __('auth/labels.confirmPassword') }}"
             name="confirm-password"
         />
 
         {{-- chat nickname --}}
         <x-auth-field
             type="text"
-            label="{{ __('authentication/labels.chatNickname') }}"
+            label="{{ __('auth/labels.chatNickname') }}"
             name="chat-nickname"
         />
 
@@ -49,8 +49,8 @@
         name="sign-in"
         value="{{
             $action === 'login'
-                ? __('authentication/labels.submitLogin')
-                : __('authentication/labels.submitRegister')
+                ? __('auth/labels.submitLogin')
+                : __('auth/labels.submitRegister')
         }}"
     />
 

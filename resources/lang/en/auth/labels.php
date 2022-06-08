@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'email' => 'Email',
     'password' => 'Password',
     'confirmPassword' => 'Confirm password',
     'chatNickname' => 'Chat nickname',

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Link, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./auth/Login";
+import LoginContainer from "./auth/LoginContainer";
 
 class App extends Component {
     state = {
@@ -17,14 +17,13 @@ class App extends Component {
             <div>
                 <Router>
                     <Routes>
-                        <Route path="/login" element={ <Login/> }/>
+                        <Route path="/login" element={ <LoginContainer/> }/>
                         {
                             this.state.user === 'guest' &&
                             <Route path="/" element={ <Navigate to="/login"/> }/>
                         }
                     </Routes>
                 </Router>
-
             </div>
         );
     }
