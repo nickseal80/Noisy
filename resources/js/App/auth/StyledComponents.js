@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     display: flex;
@@ -57,12 +58,12 @@ export const Submit = styled.input.attrs({ type: 'button' })`
     box-shadow: 1px 1px 4px 0 #7b7b7b;
 `;
 
-export const Link = styled.a`
+export const StdLink = styled(Link)`
     text-decoration: none;
     text-transform: none;
 `;
 
-export const ForgetPasswdLink = styled(Link)`
+export const ForgetPasswdLink = styled(StdLink)`
     color: #8d8d8d;
 `;
 
@@ -70,7 +71,7 @@ export const Invite = styled.div`
     font-size: 14px;
 `;
 
-export const InviteLink = styled(Link)`
+export const InviteLink = styled(StdLink)`
     font-weight: 700;
     color: #000;
 `;

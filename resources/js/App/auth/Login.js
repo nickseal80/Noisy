@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import {Container, ForgetPasswdLink, Form, FormField, Invite, InviteLink, Link, Submit} from './StyledComponents';
+import { Link } from "react-router-dom";
+import {Container, ForgetPasswdLink, Form, FormField, Invite, InviteLink, Submit} from './StyledComponents';
 import Field from "./Field";
+import RegisterContainer from "./RegisterContainer";
 
 class Login extends Component {
     componentDidMount() {
@@ -35,13 +37,13 @@ class Login extends Component {
                     />
 
                     <FormField>
-                        <ForgetPasswdLink href={'#'}>{locales.text.forgetPassword}</ForgetPasswdLink>
+                        <ForgetPasswdLink to={'/'}>{locales.text.forgetPassword}</ForgetPasswdLink>
                     </FormField>
 
                     <Submit value={locales.fields.submitLogin}/>
 
                     <Invite>
-                        {locales.text.notHaveAcc} <InviteLink href={'#'}>{locales.text.login}</InviteLink>
+                        {locales.text.notHaveAcc} <InviteLink to={'/register'}>{locales.text.login}</InviteLink>
                     </Invite>
                 </Form>
             );
@@ -51,9 +53,7 @@ class Login extends Component {
     render() {
         return (
             <Container>
-                {
-                    this.renderForm()
-                }
+                {this.renderForm()}
             </Container>
         );
     }
