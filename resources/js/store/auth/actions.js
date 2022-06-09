@@ -23,9 +23,20 @@ export const updateAction = (value) => ({
 const updateLocales = (locales) => ({
     type: actionTypes.UPDATE_LOCALES,
     locales,
+});
+
+const updateConfig = (config) => ({
+    type: actionTypes.UPDATE_CONFIG,
+    config,
 })
 
 export const getLoginData = () => async (dispatch) => {
     const { data } = await axios.get(route('api.get.login-data'));
     dispatch(updateLocales(data.locales));
 };
+
+export const getRegisterData = () => async (dispatch) => {
+    const { data } = await axios.get(route('api.get.register-data'));
+    dispatch(updateLocales(data.locales));
+    dispatch(updateConfig(data.config));
+}

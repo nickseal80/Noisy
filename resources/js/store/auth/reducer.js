@@ -4,6 +4,7 @@ import constants from "../../constants";
 const initialState = {
     action: constants.auth.AUTH_LOGIN,
     locales: {},
+    config: {},
     loginForm: {
         email: '',
         password: '',
@@ -40,6 +41,9 @@ const auth = (state = initialState, action) => {
 
         case actionTypes.UPDATE_LOCALES:
             return { ...state, locales: action.locales };
+
+        case actionTypes.UPDATE_CONFIG:
+            return { ...state, config: action.config };
 
         default:
             return { ...state };

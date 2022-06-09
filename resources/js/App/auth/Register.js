@@ -1,14 +1,61 @@
-import React, {Component} from 'react';
-import {Container, Form} from "./StyledComponents";
+import React, { Component } from 'react';
+import {Container, Form, Invite, InviteLink, Submit} from "./StyledComponents";
+import constants from "../../constants";
+import Field from "./Field";
 
 class Register extends Component {
+    componentDidMount() {
+        this.props.updateAction(constants.auth.AUTH_REGISTER);
+        this.props.getRegisterData();
+    }
+
+    renderForm = () => {
+        if (Object.keys(this.props.locales).length > 0) {
+            const { locales } = this.props;
+
+            return (
+                <Form>
+                    <h3>{locales.header}</h3>
+
+                    <Field
+                        type={'text'}
+                        name={'email'}
+                        caption={locales.fields.email}
+                    />
+
+                    <Field
+                        type={'password'}
+                        name={'password'}
+                        caption={locales.fields.password}
+                    />
+
+                    <Field
+                        type={'password'}
+                        name={'confirm-password'}
+                        caption={locales.fields.confirmPassword}
+                    />
+
+                    <Field
+                        type={'nickname'}
+                        name={'nickname'}
+                        caption={locales.fields.chatNickname}
+                    />
+
+                    <Submit value={locales.fields.submitRegister}/>
+
+                    <Invite>
+                        {locales.text.haveAcc} <InviteLink to={'/login'}>{locales.text.register}</InviteLink>
+                    </Invite>
+                </Form>
+            );
+        }
+    }
 
     render() {
+
         return (
             <Container>
-                <Form>
-                    <h3>ee</h3>
-                </Form>
+                {this.renderForm()}
             </Container>
         );
     }

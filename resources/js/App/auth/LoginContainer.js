@@ -1,6 +1,6 @@
 import Login from "./Login";
 import { connect } from "react-redux";
-import { updateField, getLoginData } from "../../store/auth/actions";
+import { updateField, getLoginData, updateAction } from "../../store/auth/actions";
 
 const mapStateToProps = state => ({
     locales: state.auth.locales,
@@ -8,6 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
+    updateAction,
     updateField,
     getLoginData,
 };

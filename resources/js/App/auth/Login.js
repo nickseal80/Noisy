@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import {Container, ForgetPasswdLink, Form, FormField, Invite, InviteLink, Submit} from './StyledComponents';
 import Field from "./Field";
 import RegisterContainer from "./RegisterContainer";
+import constants from "../../constants";
 
 class Login extends Component {
     componentDidMount() {
+        this.props.updateAction(constants.auth.AUTH_LOGIN);
         this.props.getLoginData();
     }
 

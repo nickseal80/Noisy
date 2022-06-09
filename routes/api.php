@@ -33,4 +33,7 @@ Route::controller(UserController::class)->group(function () {
 Route::controller(\App\Http\Controllers\Auth\DataController::class)->group(function () {
     Route::get('login-data', 'getLoginData')
         ->name('api.get.login-data');
+
+    Route::get('register-data', 'getRegisterData')
+        ->name('api.get.register-data');
 });
