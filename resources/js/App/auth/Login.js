@@ -30,12 +30,16 @@ class Login extends Component {
                         type={'text'}
                         name={'email'}
                         caption={locales.fields.email}
+                        update={this.props.updateField}
+                        value={this.props.email}
                     />
 
                     <Field
                         type={'password'}
                         name={'password'}
                         caption={locales.fields.password}
+                        update={this.props.updateField}
+                        value={this.props.password}
                     />
 
                     <FormField>

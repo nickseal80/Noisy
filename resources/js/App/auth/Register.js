@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Container, Form, Invite, InviteLink, Submit} from "./StyledComponents";
+import { Container, Form, Invite, InviteLink, Submit } from "./StyledComponents";
 import constants from "../../constants";
 import Field from "./Field";
 
@@ -21,24 +21,32 @@ class Register extends Component {
                         type={'text'}
                         name={'email'}
                         caption={locales.fields.email}
+                        update={this.props.updateField}
+                        value={this.props.email}
                     />
 
                     <Field
                         type={'password'}
                         name={'password'}
                         caption={locales.fields.password}
+                        update={this.props.updateField}
+                        value={this.props.password}
                     />
 
                     <Field
                         type={'password'}
-                        name={'confirm-password'}
+                        name={'confirmPassword'}
                         caption={locales.fields.confirmPassword}
+                        update={this.props.updateField}
+                        value={this.props.confirmPassword}
                     />
 
                     <Field
                         type={'nickname'}
-                        name={'nickname'}
+                        name={'name'}
                         caption={locales.fields.chatNickname}
+                        update={this.props.updateField}
+                        value={this.props.nickname}
                     />
 
                     <Submit value={locales.fields.submitRegister}/>
