@@ -20,6 +20,11 @@ export const updateAction = (value) => ({
     value,
 });
 
+export const updateErrors = (errors) => ({
+    type: actionTypes.UPDATE_ERRORS,
+    errors,
+})
+
 const updateLocales = (locales) => ({
     type: actionTypes.UPDATE_LOCALES,
     locales,

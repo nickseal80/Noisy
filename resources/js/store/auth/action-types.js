@@ -5,4 +5,5 @@ export default {
     UPDATE_ACTION: `${prefix}UPDATE_ACTION`,
     UPDATE_LOCALES: `${prefix}UPDATE_LOCALES`,
     UPDATE_CONFIG: `${prefix}UPDATE_CONFIG`,
+    UPDATE_ERRORS: `${prefix}UPDATE_ERRORS`,
 }

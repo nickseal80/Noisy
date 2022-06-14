@@ -5,6 +5,7 @@ const initialState = {
     action: constants.auth.AUTH_LOGIN,
     locales: {},
     config: {},
+    errors: {},
     loginForm: {
         email: '',
         password: '',
