@@ -1,5 +1,22 @@
 const mix = require('laravel-mix');
 
+const config = {
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader",
+                exclude: /node_modules/
+            }
+        ]
+    },
+    resolve: {
+        extensions: ["*", ".js", ".jsx", ".vue", ".ts", ".tsx"]
+    }
+}
+
+mix.webpackConfig(config);
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,7 +28,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/index.js', 'public/js');
+mix.ts('resources/ts/index.tsx', 'public/js');
 
 mix.copyDirectory('resources/fonts', 'public/fonts');
 
