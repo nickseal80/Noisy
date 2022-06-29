@@ -13,3 +13,10 @@
     src: local('Roboto Bold'), local('Roboto-Bold'), url(/fonts/Roboto-Bold.ttf) format('truetype');
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'fa-regular';
+    font-style: normal;
+    font-weight: 400;
+    src: local('fa-regular'), url(/fonts/fa-regular-400.ttf) format('truetype');
+}

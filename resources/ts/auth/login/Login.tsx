@@ -1,20 +1,27 @@
-import React from "react";
+import React, { FormEvent, SyntheticEvent } from "react";
 import { Background, Card, CardTitle } from "./login.styles";
 import TextInput from "../../components/TextInput";
+import CheckBox from "../../components/CheckBox";
 import { useSelector, useDispatch } from "react-redux";
-import { updateEmail, updatePassword } from "./loginSlice";
+import { updateEmail, updatePassword, rememberMeToggle } from "./loginSlice";
 import { RootState } from "../../store";
 
 const Login: React.FC = () => {
-    const {email, password} = useSelector((state: RootState) => state.login);
+    const {email, password, rememberMe} = useSelector((state: RootState) => state.login);
     const dispatch = useDispatch();
 
-    const emailHandle = (evt) => {
-        dispatch(updateEmail(evt.target.value));
+    const emailHandle = (evt: FormEvent<HTMLInputElement>) => {
+        const email = (evt.target as HTMLInputElement).value;
+        dispatch(updateEmail(email));
     }
 
-    const passwordHandle = (evt) => {
-        dispatch(updatePassword(evt.target.value));
+    const passwordHandle = (evt: FormEvent<HTMLInputElement>) => {
+        const pass = (evt.target as HTMLInputElement).value;
+        dispatch(updatePassword(pass));
+    }
+
+    const rmToggle = () => {
+        dispatch(rememberMeToggle());
     }
 
     return (
@@ -36,21 +43,11 @@ const Login: React.FC = () => {
                     value={password}
                 />
 
-                {/*<input*/}
-                {/*    type={"text"}*/}
-                {/*    id={"email"}*/}
-                {/*    onChange={emailHandle}*/}
-                {/*    value={email}*/}
-                {/*    style={{height: '30px'}}*/}
-                {/*/>*/}
-
-                {/*<input*/}
-                {/*    type={"password"}*/}
-                {/*    id={"password"}*/}
-                {/*    onChange={passwordHandle}*/}
-                {/*    value={password}*/}
-                {/*    style={{height: '30px'}}*/}
-                {/*/>*/}
+                <CheckBox
+                    checked={rememberMe}
+                    toggle={rmToggle}
+                    label={"Автоматический вход"}
+                />
             </Card>
         </Background>
     )

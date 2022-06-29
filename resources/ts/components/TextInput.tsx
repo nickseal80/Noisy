@@ -8,7 +8,7 @@ interface ITextInput {
     value: string,
 }
 
-const TextInput: React.FC <ITextInput> = ({ type, placeholder, value, onChange }) => {
+const TextInput: React.FC<ITextInput> = ({ type, placeholder, value, onChange }) => {
     const [active, setActive] = useState(false);
 
     return (
