@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import vars from "../../global.vars";
+import vars from "../../styles/global.vars";
 
 interface IField {
     active: boolean,

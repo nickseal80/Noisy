@@ -1,9 +1,9 @@
 import React from "react";
-import { SCheckBox, Container, Label } from "../styles/basic-components/form-components/CheckBox";
+import { SCheckBox, Container, Label } from "./checkBox.styled";
 
 interface ICheckBox {
     checked: boolean,
-    toggle: () => any,
+    toggle: () => void,
     label?: string,
 }
 

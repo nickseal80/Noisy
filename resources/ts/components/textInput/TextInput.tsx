@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { STextInput } from "../styles/basic-components/form-components/TextInput";
+import { STextInput } from "./textInput.styled";
 
 interface ITextInput {
     type: string,

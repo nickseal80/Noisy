@@ -44,7 +44,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | User Providers
+    | UserRepository Providers
     |--------------------------------------------------------------------------
     |
     | All auth drivers have a user provider. This defines how the
@@ -107,6 +107,12 @@ return [
     */
 
     'password_timeout' => 10800,
+
+    'api' => [
+        'driver'   => 'token',
+        'provider' => 'users',
+        'hash'     => true,
+    ],
 
     'minPasswordLength' => 7,
     'maxPasswordLength' => 32,

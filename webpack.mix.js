@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 
 const config = {
     module: {
@@ -27,6 +28,10 @@ mix.webpackConfig(config);
  | file for the application as well as bundling up all the JS files.
  |
  */
+
+mix.alias({
+    ziggy: path.resolve('vendor/tightenco/ziggy/dist'),
+})
 
 mix.ts('resources/ts/index.tsx', 'public/js');
 

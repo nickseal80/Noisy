@@ -3,7 +3,7 @@
 namespace App\Providers\Authentication;
 
 use App\Repositories\Users\interfaces\UserInterface;
-use App\Repositories\Users\User;
+use App\Repositories\Users\UserRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AuthenticationServiceProvider extends ServiceProvider
@@ -25,6 +25,6 @@ class AuthenticationServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(UserInterface::class, User::class);
+        $this->app->bind(UserInterface::class, UserRepository::class);
     }
 }

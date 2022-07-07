@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import colors from "../../global.colors.vars";
+import colors from "../../styles/global.colors.vars";
 
 interface ICheckBox {
     checked: boolean,

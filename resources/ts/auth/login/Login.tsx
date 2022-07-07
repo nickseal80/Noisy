@@ -1,13 +1,14 @@
 import React, { FormEvent, SyntheticEvent } from "react";
-import { Background, Card, CardTitle } from "./login.styles";
-import TextInput from "../../components/TextInput";
-import CheckBox from "../../components/CheckBox";
+import { Background, Card, CardTitle } from "./login.styled";
+import TextInput from "../../components/textInput/TextInput";
+import CheckBox from "../../components/checkbox/CheckBox";
 import { useSelector, useDispatch } from "react-redux";
 import { updateEmail, updatePassword, rememberMeToggle } from "./loginSlice";
 import { RootState } from "../../store";
+import Button from "../../components/button/Button";
 
 const Login: React.FC = () => {
-    const {email, password, rememberMe} = useSelector((state: RootState) => state.login);
+    const { email, password, rememberMe } = useSelector((state: RootState) => state.login);
     const dispatch = useDispatch();
 
     const emailHandle = (evt: FormEvent<HTMLInputElement>) => {
@@ -22,6 +23,15 @@ const Login: React.FC = () => {
 
     const rmToggle = () => {
         dispatch(rememberMeToggle());
+    }
+
+    const submit = () => {
+        try {
+            //
+        } catch (err) {
+            console.error(err);
+            //
+        }
     }
 
     return (
@@ -48,6 +58,8 @@ const Login: React.FC = () => {
                     toggle={rmToggle}
                     label={"Автоматический вход"}
                 />
+
+                <Button caption={'Войти'} handler={submit}/>
             </Card>
         </Background>
     )

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\DataController;
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,15 +27,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::controller(UserController::class)->group(function () {
-    Route::get('user-data', 'getUserData')
-        ->name('api.get.user-data');
-});
+Route::controller(AuthController::class)->prefix('auth')->group(function () {
+    Route::post('/sign-up', 'signUp')
+        ->name('auth.sign-up');
 
-Route::controller(\App\Http\Controllers\Auth\DataController::class)->group(function () {
-    Route::get('login-data', 'getLoginData')
-        ->name('api.get.login-data');
+    Route::post('/sign-in', 'signIn')
+        ->name('auth.sign-in');
 
-    Route::get('register-data', 'getRegisterData')
-        ->name('api.get.register-data');
+    Route::post('/sign-out', 'signOut')
+        ->middleware('auth:sanctum')
+        ->name('auth.sign-out');
+
+    Route::get('/user-data', 'getAuthUser')
+        ->name('auth.user');
 });
