@@ -5,7 +5,9 @@ namespace App\Repositories\Users;
 use App\Models\User;
 use App\Repositories\Repository;
 use App\Repositories\Users\interfaces\UserInterface;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class UserRepository extends Repository implements UserInterface
 {
@@ -16,11 +18,18 @@ class UserRepository extends Repository implements UserInterface
         $this->model = $user;
     }
 
-    public function getByAccessToken(string $accessToken, array|string $select = '*'): Model|null
+    public function create(array $create): Model|Builder
     {
-        return User::query()
-            ->select($select)
-            ->where('access_token', '=', $accessToken)
-            ->first();
+        $user = new User();
+        collect($create)->each(function ($value, $attribute) use ($user) {
+            $user->$attribute = $value;
+        });
+
+        if (!$user->remember_token) {
+            $user->remember_token = Str::random(12);
+        }
+        $user->save();
+
+        return $user;
     }
 }

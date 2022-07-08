@@ -49,7 +49,7 @@ class AuthLoginTest extends TestCase
     {
         $data = [
             'email'    => 'testER@test.com',
-            'password' => bcrypt('12345678')
+            'password' => '12345678',
         ];
 
         $this->withHeaders(['X_REQUESTED_WITH' => 'XMLHttpRequest'])
