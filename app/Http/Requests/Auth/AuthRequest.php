@@ -13,11 +13,17 @@ class AuthRequest extends FormRequest
         return Auth::guest();
     }
 
-    #[ArrayShape(['accessToken' => "string"])]
+    #[ArrayShape(
+        [
+            'accessToken' => "string",
+            'login'       => "boolean"
+        ]
+    )]
     public function rules(): array
     {
         return [
             'accessToken' => 'required|string',
+            'login'       => 'boolean',
         ];
     }
 }
