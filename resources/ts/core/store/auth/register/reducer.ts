@@ -1,12 +1,16 @@
 import { createReducer } from "@reduxjs/toolkit";
 import * as actions from "./actions";
 import { RegisterState } from "../../../types/initialState.types";
+import { useError } from "../../../hooks/validation.hooks";
+import Error = Validation.Error;
+import { Validation } from "../../../types/validation.types";
 
 const initialState: RegisterState = {
     name: '',
     email: '',
     password: '',
     confirmPassword: '',
+    errors: {},
 }
 
 const registerReducer = createReducer(initialState, (builder) => {
@@ -22,6 +26,9 @@ const registerReducer = createReducer(initialState, (builder) => {
         })
         .addCase(actions.updateConfirmPassword, (state, action) => {
             state.confirmPassword = <string>action.payload;
+        })
+        .addCase(actions.updateErrors, (state, action) => {
+            state.errors = useError(state, <Error>action.payload);
         });
 });
 
