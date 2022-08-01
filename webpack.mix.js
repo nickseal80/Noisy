@@ -40,3 +40,5 @@ mix.copyDirectory('resources/fonts', 'public/fonts');
 mix.css('resources/css/fonts.css', 'public/css');
 
 mix.sass('resources/sass/base.scss', 'public/css');
+
+mix.copyDirectory('resources/images', 'public/images');
