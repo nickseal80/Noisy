@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate, Link } from "react-router-dom";
 import GlobalStyles from "./styles/global";
-import Loader from "./components/UI/Loader";
 import Login from "./pages/Login";
 import Chat from "./pages/Chat";
 import Register from "./pages/Register";
@@ -28,7 +27,6 @@ const App: React.FC = () => {
                 </Route>
             </Routes>
             <GlobalStyles />
-            <Link to="/auth/login">login</Link>
 
         </>
     )
