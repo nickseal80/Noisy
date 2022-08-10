@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../components/UI/card/Card";
+import Input from "../components/UI/elements/input/Input";
 
 const Login: React.FC = () => {
     return (
@@ -10,7 +11,9 @@ const Login: React.FC = () => {
                 title="Авторизация"
                 centered={true}
             >
-                <div>card</div>
+                <div>
+                    <Input type="text" />
+                </div>
             </Card>
         </div>
     )

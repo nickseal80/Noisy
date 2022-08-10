@@ -16,7 +16,7 @@ const centeredMixin = `
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-`
+`;
 
 export const Card = styled.div<StyledCard>`
     background-color: ${colors.cardBackground};

@@ -38,8 +38,11 @@ class AuthLoginTest extends TestCase
             ->json('POST', route('auth.sign-in'), $data)
             ->assertOk();
 
-        $this->assertEquals('test@test.com', Auth::user()->email);
-        $this->assertEquals('Kisa Vorobyaninov', Auth::user()->name);
+        /* @var User $user */
+        $user = Auth::user();
+
+        $this->assertEquals('test@test.com', $user->email);
+        $this->assertEquals('Kisa Vorobyaninov', $user->name);
     }
 
     /**
