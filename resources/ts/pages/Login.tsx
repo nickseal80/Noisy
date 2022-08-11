@@ -1,6 +1,8 @@
 import React from "react";
 import Card from "../components/UI/card/Card";
 import Input from "../components/UI/elements/input/Input";
+import Checkbox from "../components/UI/elements/checkbox/Checkbox";
+import Button from "../components/UI/elements/button/Button";
 
 const Login: React.FC = () => {
     return (
@@ -12,7 +14,7 @@ const Login: React.FC = () => {
                 centered={true}
             >
                 <div>
-                    <Input type="text" />
+
                 </div>
             </Card>
         </div>

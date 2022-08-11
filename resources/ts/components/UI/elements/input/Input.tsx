@@ -3,6 +3,7 @@ import * as Styled from "./input.styled";
 
 type InputProps = {
     type: string,
+    placeholder?: string,
     value?: string,
     onChangeHandler?: (text: string) => any,
 }
@@ -19,6 +20,7 @@ function Input(props: InputProps) {
             type={props.type}
             value={props.value}
             active={active}
+            placeholder={props.placeholder ? props.placeholder : ''}
             onChange={changeHandler}
             onFocus={() => {
                 setActive(true)
